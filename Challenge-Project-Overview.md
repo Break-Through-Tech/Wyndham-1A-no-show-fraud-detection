@@ -42,6 +42,7 @@ The project addresses a relevant and timely issue in hospitality management—a 
 
 **Company / Org:** Wyndham Hotels & Resorts  
 **Challenge Advisor:** Danielle Golinski, danielle.golinski@wyndham.com  
+**AI Studio Coach:** Deanna DiMonte, [deanna.dimonte@breakthroughtech.org](mailto:deanna.dimonte@breakthroughtech.org)   
 **Program:** Break Through Tech AI Studio - Fall 2026  
 
 ---
