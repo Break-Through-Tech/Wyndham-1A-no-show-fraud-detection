@@ -41,7 +41,8 @@ The project addresses a relevant and timely issue in hospitality management—a 
 # No-Show Fraud Detection: Protecting Hotel Inventory from Loyalty Reservation Abuse
 
 **Company / Org:** Wyndham Hotels & Resorts  
-**Challenge Advisor:** Danielle Golinski, danielle.golinski@wyndham.com  
+**Challenge Advisor:** Danielle Golinski, [danielle.golinski@wyndham.com](mailto:danielle.golinski@wyndham.com)  
+**Challenge Advisor:** Seema Yadav, [seema.yadav@wyndham.com](mailto:seema.yadav@wyndham.com)   
 **AI Studio Coach:** Deanna DiMonte, [deanna.dimonte@breakthroughtech.org](mailto:deanna.dimonte@breakthroughtech.org)   
 **Program:** Break Through Tech AI Studio - Fall 2026  
 
