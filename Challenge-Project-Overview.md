@@ -58,8 +58,8 @@ Wyndham Hotels & Resorts is a global leader in the hospitality industry, operati
 ### Project Summary
 In this project, you will use synthetic Wyndham-shaped loyalty data — including reservation and stay data, no-show events, and points redemption timing — and supervised classification (XGBoost) with SHAP explainability to build a flexible model that identifies members repeatedly booking hotel reservations with no intent to stay, in order to harvest first-night no-show loyalty points and redeem them quickly for value. This will help our company proactively address a fraud pattern that simultaneously ties up hotel inventory and drains loyalty point liability, where bad actors exploit a legitimate member benefit.
 
-Prediction (simple) = Logistic Regression = baseline scoring
-Prediction (advanced) = XGBoost = high-accuracy scoring
+Prediction (simple) = Logistic Regression = baseline scoring  
+Prediction (advanced) = XGBoost = high-accuracy scoring  
 Explanation = SHAP = explains decisions
 
 ### Success Criteria
