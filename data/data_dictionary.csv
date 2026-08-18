@@ -1,6 +1,6 @@
 column,business_name,type,null_rule,definition
 address_line_1,Address Line 1,string,never,Synthetic member or guest street address
-booking_channel,Booking Channel,category,never,Where the member or guest booked the stay, i.e. "Website, Mobile App, OTA, Voice, Property Direct, or GDS"
+booking_channel,Booking Channel,category,never,"Where the member or guest booked the stay, i.e. ""Website, Mobile App, OTA, Voice, Property Direct, or GDS"""
 booking_timestamp,Booking Date/timestamp,ISO-8601 timestamp,never,Time the reservation was created
 cancellation_date,Cancellation Date,date,blank unless canceled,Date the reservation was cancelled; Populated for qualification code = QXN and qualification code = QXY scenarios
 check_in_date,Check In Date,date,never,Planned arrival date
