@@ -95,9 +95,13 @@ The most ambitious stretch, if the fellows are ahead, is simulating model drift.
 
 ## 📊 Dataset
 
-[CA to update here - "This is not 100% solidified yet, but we would ideally be providing reservation and redemption data. It would be shared via a secure Sharepoint site (encrypted).  We (Wyndham) may end up needing to generate synthetic Wyndham-shaped data instead of providing real data, depending on what our compliance team comes back with.]
-Write a sentence or two on how the data was generated - based on real data and is synthetic, etc.
-Overview of each file, whats in them
+The dataset is synthetic and generated via ChatGPT using 5.6 Sol, using prompts from analysis done on the real fraudulent reservation use cases. Each folder contains one "month" of data.
+
+| File | Description | 
+|------------|------------------------------------------------------------|
+| stays	| xxxxx |
+| reservations	| xxxxx |
+
 
 
 ---
