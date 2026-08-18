@@ -95,14 +95,25 @@ The most ambitious stretch, if the fellows are ahead, is simulating model drift.
 
 ## 📊 Dataset
 
-The dataset is synthetic and generated via ChatGPT using 5.6 Sol, using prompts from analysis done on the real fraudulent reservation use cases. Each folder contains one "month" of data.
+The dataset is synthetic and generated via ChatGPT using 5.6 Sol, using prompts from analysis performed on real fraudulent reservation use cases. 
 
 | File | Description | 
 |------------|------------------------------------------------------------|
-| stays	| xxxxx |
-| reservations	| xxxxx |
+| reservations_month_2026.csv	| Synthetic bookings made at Wyndham hotels |
+| stays_month_2026.csv	| Synthetic processed/completed stays, sent by hotels into Wyndham for processing |
+| data_dictionary.csv	| Data dictionary outlining descriptions of each field within the files |
 
+To open and work with the files, use Power BI, DuckDB, a database, or Python. In Excel, use Data > Get Data > From Text/CSV and load to the Data Model or create a connection instead of loading all records to a worksheet. Memory and Excel edition still matter at this scale.
 
+Chunked Python example:
+
+```python
+import pandas as pd
+
+for chunk in pd.read_csv("reservations_july_2026.csv", chunksize=250_000):
+    # Profile or transform the chunk.
+    pass
+```
 
 ---
 
