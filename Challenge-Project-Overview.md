@@ -1,43 +1,3 @@
----
-
-> ## Challenge Advisor: Update & Finalize Your Project Overview
->
-> > 💡 **These grey text instructions are just for you, the team's Challenge Advisor; please delete them once you have completed the steps below.**
->
-> We've pre-populated this Challenge Project Overview page — which is what will be shared with your Break Through Tech student team in August — using the details from your submission form. You should have received an email inviting you to join this repo as a Collaborator, enabling you to add files and make edits.
-> 
-> In order for your project to be finalized and assigned to a team, please:
-> 1. **Review all sections below** and update or expand any content as needed, making sure to address the SME Feedback in the section immediately below. Look for square brackets to find the places below that require additional inputs from you (e.g., "About [Company / Org Name]").
-> 2. **Add your dataset** to the [data folder](data) in this repo.
-> 3. **Close the Issue assigned to you in this repo** to let us know that you have made your edits and the overview page is ready for final review. You can do this by going to the _Issues_ tab in the top left section of the menu above, add a comment that says "CA review complete", and click the button to Close the Issue. 
->
-> If you're unfamiliar with how to edit a page like this in GitHub, check out [this tutorial](https://ubc-lib-geo.github.io/gis-workshop-waml-template/content/handson/edit-readme.html) for a quick overview (start with step 2 and only edit this page), and [this guide](https://ubc-lib-geo.github.io/gis-workshop-waml-template/content/markdown.html) on how to use Markdown to compose text.
->
->
-> ❌ Remember that this is a public repo. Do NOT include: Proprietary data, PII, API keys, credentials, or anything confidential.
-
----
-
-## 📋 BTT Internal Evaluation Notes
-*(This section is for BTT staff and CAs only — remove before sharing with students)*
-
-### Technical Vetting
-| Check | Status | Notes |
-| :--- | :--- | :--- |
-| Python Compatibility | 🟢 | The project uses a Python-centric tech stack, aligning with students' existing skills and resources. |
-| Data Readiness | 🟡 | The dataset is estimated to be between 5 GB and 10 GB. While it is not over the 10GB threshold, the project's success will depend on the complexity and cleanliness of the synthetic data, which may require substantial preprocessing. |
-| Resource Check | 🟢 | All required resources, including software and tools, are accessible via Google Colab, which is user-friendly for students and eliminates infrastructure concerns. |
-
-### Internal Scores
-- **Student Fit Score:** 7/10
-- **Technical Depth Score:** 8/10
-- **Overall Recommendation:** REVISE
-
-### Advisor Feedback Draft
-The project addresses a relevant and timely issue in hospitality management—a strong starting point. To enhance student engagement, consider the following suggestions: 1. Simplify the SHAP integration for better understanding among students, and maybe provide additional resources or tutorials. 2. Sharing recommended cleaning and preprocessing of the synthetic data to avoid mismatched expectations. This would help students manage their workload more efficiently throughout the semester. Overall, I encourage you to clarify these gaps in your project outline to better empower students. These steps could help ensure a comprehensive learning experience for the Fellows and a successful project outcome for your team.
-
----
-
 # No-Show Fraud Detection: Protecting Hotel Inventory from Loyalty Reservation Abuse
 
 **Company / Org:** Wyndham Hotels & Resorts  
@@ -56,23 +16,71 @@ Wyndham Hotels & Resorts is a global leader in the hospitality industry, operati
 ## 🎯 The Challenge
 
 ### Project Summary
-In this project, you will use synthetic Wyndham-shaped loyalty data — including reservation and stay data, no-show events, and points redemption timing — and supervised classification (XGBoost) with SHAP explainability to build a flexible model that identifies members repeatedly booking hotel reservations with no intent to stay, in order to harvest first-night no-show loyalty points and redeem them quickly for value. This will help our company proactively address a fraud pattern that simultaneously ties up hotel inventory and drains loyalty point liability, where bad actors exploit a legitimate member benefit.
-
-Prediction (simple) = Logistic Regression = baseline scoring  
-Prediction (advanced) = XGBoost = high-accuracy scoring  
-Explanation = SHAP = explains decisions
+In this project, you will use synthetic Wyndham-shaped booking data — including reservation data, stay data, no-show events, and points redemption timing — and supervised classification (XGBoost or similar) with SHAP explainability (or similar) to build a flexible model that identifies members repeatedly booking hotel reservations with no intent to stay, in order to harvest first-night no-show loyalty points and redeem them quickly for value. This will help our company proactively address a fraud pattern that simultaneously ties up hotel inventory and drains loyalty point liability, where bad actors exploit a legitimate member benefit.
 
 ### Success Criteria
 
-A model that catches a meaningful share of fraudulent accounts before redemption happens, at a false positive rate low enough that a real analyst queue would be workable.
+* A **model** that catches a meaningful share of fraudulent accounts before redemption happens, at a false positive rate low enough that a real analyst queue would be workable.
 
-A SHAP-powered dashboard that an analyst could sit down with on Day 1 and understand without additional training.
+* A **dashboard** that an analyst could sit down with on Day 1 and understand without additional training.
 
-A final presentation where the fellows can honestly quantify the tradeoff — here's how much fraud we catch, here's the cost in false positives, here's what it would take to deploy this — rather than just reporting that the model performed well on a test set.
+* A **final presentation** where the fellows can honestly quantify the tradeoff — here's how much fraud we catch, here's the cost in false positives, here's what it would take to deploy this — rather than just reporting that the model performed well on a test set.
 
-The Red Team exercise in Week 9 is also part of measuring success. Fellows that can clearly articulate what their model misses and why has understood the problem at a deeper level than one that can only describe what it catches.
+A **Red Team exercise** is also part of measuring success. Fellows that can clearly articulate what their model misses and why has understood the problem at a deeper level than one that can only describe what it catches.
 
-Below are various milestones plotted for each week, but this is meant to be flexible and provide a guideline only. Some of the techniques / specifics are guidelines as well and can be flexible/discussed.
+### Project Milestones
+
+Fellows should approach the project in phases so they can build a working model first, then improve performance and explainability. 
+
+| Level | Fellow Task | Why It Helps |
+|-------|-----------|----------------|
+| 1. Baseline	| Logistic Regression or Random Forest | Easy benchmark before using XGBoost |
+| 2. Better model	| XGBoost or Gradient Boosting | Handles non-linear behavioral patterns better |
+| 3. Explainability	| SHAP summary plot and 3 to 5 example explanations | Turns model output into business-friendly insights |
+
+Use the below phase gates to guide your work. Your team will create a **GitHub Projects board** to track tasks within each milestone.
+
+**Phase 1: Understand the Data and Business Problem**
+- Review the data dictionary and understand what each field represents.
+- Define the target variable clearly: whether a member or reservation pattern should be flagged as potentially fraudulent.
+- Conduct exploratory data analysis to understand no-show frequency, booking timing, redemption behavior, cancellation behavior, member tenure, and repeat patterns.
+ 
+**Phase 2: Basic Data Validation and Feature Preparation**
+The dataset is synthetic and expected to be mostly clean, so heavy preprocessing is not required. Fellows should still perform basic checks:
+- Confirm field types, especially dates, numeric loyalty fields, and categorical fields.
+- Join tables where desired.
+- Check for missing values, duplicate records, impossible dates, and extreme outliers.
+- Review class imbalance between normal and suspicious activity.
+- Create behavior-based features such as no-show rate, booking frequency, cancellation ratio, redemption timing, account tenure, and repeated booking patterns.
+ 
+**Phase 3: Baseline Modeling**
+- Start with a simple baseline model such as Logistic Regression or Random Forest.
+- Use this baseline to understand whether the features have predictive signal.
+- Evaluate using Precision, Recall, F1 Score, Precision-Recall AUC, and False Positive Rate.
+ 
+**Phase 4: Model Improvement**
+- Train an XGBoost classifier or similar tree-based model.
+- Compare performance against the baseline model.
+- If class imbalance is significant, test approaches such as class weights or SMOTE.
+- Focus on practical tradeoffs: catching suspicious behavior while keeping false positives manageable for business review.
+ 
+**Phase 5: Simplified SHAP Explainability**
+SHAP should be used as an explanation layer after the model is working, not as the main technical challenge.
+Fellows should focus on:
+- A global SHAP feature importance chart showing the top drivers of high-risk predictions.
+- A few local SHAP explanations for example flagged accounts or reservations.
+- Plain-English interpretation of why the model flagged certain behavior.
+- A short discussion of how analysts could use these explanations to review suspicious accounts.
+
+**Phase 6: Red Team Exercise**
+- Each team presents their model to a peer team whose job is to defeat it — asking "how would a fraudster adapt to avoid your detection?" This is a lesson in adversarial thinking, which is fundamental to real fraud ML work.
+ 
+**Phase 7: Final Deliverables**
+- A reproducible notebook or code workflow.
+- A short model evaluation summary.
+- A simple dashboard or visual summary for analysts to use.
+- Final recommendations explaining possible fraud indicators, business impact, false positive tradeoffs, and what would be needed before any production use.
+
 
 ### Stretch Goals
 
@@ -80,20 +88,7 @@ The most natural first stretch is scoring at the time of booking rather than aft
 
 The most ambitious stretch, if the fellows are ahead, is simulating model drift. We would generate a small synthetic "next month" dataset where fraudsters have slightly adapted (this is continuously happening in real life!) — they've noticed the model and started spacing their no-shows further apart, targeting different properties, or using different PII patterns to book. Run the existing model against that new data, measure the performance drop, and propose what retraining or feature update would recover it. That exercise teaches something no textbook covers well: a fraud model is never finished, and the question of how to maintain one over time is as important as building it in the first place.
 
-| Month | Week | Milestone | Key Activities |
-|---|---|---|---|
-| September | Week 1 | Scope Alignment & Data Setup | Confirm understanding and align to scope. Environment setup. Load all data. Compute basic stats: row counts, null rates, fraud prevalence. Plot no-show rate distributions: fraud vs. legit. |
-| September | Week 2 | Exploratory Data Analysis | Deep Exploratory Data Analysis (EDA). Surface the key behavioral differences between fraudsters and legitimate members. Confirm findings with Challenge Advisors. Compile EDA deck. |
-| September | Week 3 | Feature Engineering Sprint 1 | Feature engineering sprint 1: no_show_rate, no_show_rate_l90d, noshow_points_ratio, avg_days_to_redemption. Document each feature with target signal. |
-| September | Week 4 | Feature Engineering Sprint 2 | Feature engineering sprint 2: max_same_day_noshow_bookings, distinct_markets_booked, upscale_reservation_frac, avg_advance_booking_days. Complete feature store. |
-| October | Week 5 | Baseline Modeling & Metric Selection | Baseline logistic regression. XGBoost with class weighting. Compare PR-AUC. Demonstrate why accuracy is the wrong metric. Threshold grid (10 values). |
-| October | Week 6 | Tuning & Model Lock | XGBoost hyperparameter tuning. SMOTE experiment — compare to class weighting. Select operating threshold. Lock model version for explainability layer. |
-| October | Week 7 | Explainability & Dashboard Scaffold | SHAP TreeExplainer integration. Generate force plots for 3 fraud and 3 legit members. Build dashboard scaffold with placeholder risk queue. |
-| October | Week 8 | Dashboard Completion & Business Case | Dashboard completion: live SHAP explanations, risk tier display, filterable alert queue. Usability review with program manager. Business case draft. |
-| November | Week 9 | Red Team Exercise & Presentation Build | Red Team exercise. Debrief writeup. Final presentation build. Executive summary draft reviewed by Challenge Advisors & Coach. |
-| November | Week 10 | Final Pitch & Retrospective | Presentation rehearsal. Final 20-minute stakeholder pitch. Q&A. Program retrospective. |
 
-Meant to build in some flexibility for some tasks to take longer than one week or iterations on dashboard, project, etc.
 > **Note for the team:** Please create a GitHub Projects board in this repository to break these milestones into weekly tasks. Go to the **Projects** tab → **New project** → Choose **Board** → Add columns for each month.
 
 ---
@@ -101,6 +96,9 @@ Meant to build in some flexibility for some tasks to take longer than one week o
 ## 📊 Dataset
 
 [CA to update here - "This is not 100% solidified yet, but we would ideally be providing reservation and redemption data. It would be shared via a secure Sharepoint site (encrypted).  We (Wyndham) may end up needing to generate synthetic Wyndham-shaped data instead of providing real data, depending on what our compliance team comes back with.]
+Write a sentence or two on how the data was generated - based on real data and is synthetic, etc.
+Overview of each file, whats in them
+
 
 ---
 
@@ -108,17 +106,43 @@ Meant to build in some flexibility for some tasks to take longer than one week o
 
 **ML Problem Type:** Classification, Regression, Clustering, Recommendation Systems, Time Series Analysis  
 
-**Recommended Libraries:**
-- [e.g., pandas, scikit-learn, TensorFlow, Hugging Face]
+**Modeling:**
+- Logistic Regression or Random Forest for baseline modeling
+- XGBoost or Gradient Boosting for improved model performance
+- Class weighting or SMOTE for handling class imbalance, if needed
+
+**Recommended Libraries & Tools:**
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib or Seaborn
+- Google Colab
+- For Dashboard creation: Streamlit (risk queue UI)
 
 **Evaluation Metrics:**
-- [e.g., Accuracy, Precision/Recall, RMSE, BLEU score]
-  
+- Precision
+- Recall
+- F1 Score
+- Precision-Recall AUC
+- False Positive Rate
+- Confusion Matrix
+
 ---
 
 ## 📚 Resources to Get Started
 
 The following resources will help your team understand the problem space and potential technical approaches for this project:
+
+**Business and Problem Context**
+- Hotel Loyalty Programs may offer point earnings for the first night of legitimate no-show stays, given the hotel is typically able to charge the member's credit card for the first night of the stay.
+- Hotel stays cancelled out of policy (i.e. after 4pm the day before check-in) also earn points, given the hotel is typically able to charge the member's credit card for the stay.
+- The Problem: if the hotel company's website and app do not validate credit cards upon _booking_, fake credit card numbers can be used to secure the inventory.
+- In the event of a fraudulently booked no-show or late cancellation, the hotels are instructed to "zero out" the room revenue field on the reservation before the central reservation systems automatically pick it up and send it in for processing, but the hotels have trouble keeping up. The stay then processes with revenue on it and the member earns the points.
+- Bad actors book dozens of stays, save up the points, and then quickly redeem them for Free Night Stays at local hotels. They then _sell_ the night on 3rd party booking websites and collect the revenue for the stay.
+- Loyalty fraud and abuse overall can include repeated booking behavior, points exploitation, account misuse, and suspicious redemption patterns.
+- Fellows should focus on identifying behavioral signals that may indicate no-show or cancellation abuse, while recognizing that model outputs should support analyst review (human in the loop!) rather than automatically label customers as fraudulent.
+  
 
 **Background Reading:**
 - https://lawstreet.co/vantage-points/japanese-mother-son-duo-nabbed-in-kyoto
@@ -126,8 +150,11 @@ The following resources will help your team understand the problem space and pot
 - https://onix-systems.com/blog/online-travel-fraud-prevention
 
 **Technical Tutorials:**
-- [e.g., Link to a free tutorial on the ML technique(s) involved]
-- [e.g., Link to documentation for a key library or tool]
+- Microsoft Fabric fraud detection tutorial for an end-to-end fraud detection workflow using data preparation, model training, evaluation, and scoring.
+- SHAP documentation for explaining machine learning model outputs.
+- Introductory SHAP tutorials that show feature impact and local explanations.
+- XGBoost documentation or beginner tutorials for tree-based classification.
+- Scikit-learn documentation for classification metrics and train/test validation.
 
 **Code Examples:**
 - [e.g., Link to a relevant GitHub repo]
