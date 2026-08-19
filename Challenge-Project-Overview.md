@@ -171,12 +171,6 @@ The following resources will help your team understand the problem space and pot
 - XGBoost documentation or beginner tutorials for tree-based classification.
 - Scikit-learn documentation for classification metrics and train/test validation.
 
-**Code Examples:**
-- [e.g., Link to a relevant GitHub repo]
-- [e.g., Link to a sample implementation or starter code]
-
-**Other:**
-- [Links to any additional resources — e.g., papers, videos, podcasts, etc.]
 
 *Feel free to explore beyond these, and share anything interesting you find with us!*
 
