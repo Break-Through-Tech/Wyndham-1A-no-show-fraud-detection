@@ -99,8 +99,8 @@ The dataset is synthetic and generated via ChatGPT using 5.6 Sol, using prompts 
 
 | Location | File | Description |
 |------------|------------|------------------------------------------------------------|
-| Google drive download in [data_links.md](data/data_links.md) | reservations_month_2026.csv | Synthetic bookings made at Wyndham hotels |
-| Google drive download in [data_links.md](data/data_links.md) | stays_month_2026.csv | Synthetic processed/completed stays sent by hotels to Wyndham for processing |
+| [data_links.md](data/data_links.md) | reservations_month_2026.csv | Synthetic bookings made at Wyndham hotels |
+| [data_links.md](data/data_links.md) | stays_month_2026.csv | Synthetic processed/completed stays sent by hotels to Wyndham for processing |
 | [/data folder](data/) | data_dictionary.csv | Data dictionary outlining the description of each field in the files |
 
 To open and work with the files, use Power BI, DuckDB, a database, or Python. In Excel, use Data > Get Data > From Text/CSV and load to the Data Model or create a connection instead of loading all records to a worksheet. Memory and Excel edition still matter at this scale.
